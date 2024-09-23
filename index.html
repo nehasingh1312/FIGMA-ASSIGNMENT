@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .top {
+        width: 100vw;
+        height: 40px;
+        background-color: #141414;
+        border: 1px solid #262626;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top p {
+        color: white;
+    }
+
+    .top img {
+        width: 20px;
+        height: auto;
+    }
+
+    nav {
+        background-color: black;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+        margin-left: -500px;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .menu a {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    #home {
+        color: orange;
+    }
+
+    .button {
+        border: 5px solid white;
+        border-image: linear-gradient(to right, yellow, rgb(228, 146, 4));
+        background-color: transparent;
+        color: orangered;
+        padding: 5px 10px;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-head img {
+        width: 12px;
+        height: auto;
+    }
+
+    .main-head h3 {
+        color: orange;
+    }
+
+    .below {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .below h4 {
+        color: white;
+        margin-top: 400px;
+    }
+
+    .book {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .book h3 {
+        color: orange;
+        padding-top: 10px;
+        text-decoration: underline;
+    }
+
+    .book img {
+        margin-top: 15px;
+        margin-left: 6px;
+    }
+
+    .secondpage {
+        background-color: black;
+    }
+
+    .img2nd {
+        width: 100vw;
+    }
+
+    .side-cont {
+        margin-left: 50px;
+    }
+
+    .side-cont h5 {
+        color: white;
+    }
+
+    .side-cont h2 {
+        color: orange;
+        padding-top: 7px;
+
+    }
+
+    /* .thirdpg img{
+    position: relative;
+ z-index: -1;
+}
+.cont{
+    z-index: 1;
+}
+.container3{
+    display: flex;
+}
+     */
+    .thirdpg {
+        position: relative;
+        background-color: black;
+        height: 700px;
+        /* Set this to position the child absolutely */
+    }
+
+    .thirdpg img {
+        width: 100%;
+        /* Ensure the image fills the container */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .cont {
+        position: absolute;
+        /* Position it absolutely */
+        top: 20px;
+        /* Adjust as needed to move it up */
+        left: 20px;
+        /* Adjust as needed */
+        z-index: 1;
+        /* Bring it above the image */
+        color: white;
+        /* Optional: Change text color for better visibility */
+        margin-left: 50px;
+    }
+
+    .container3 {
+        display: flex;
+        padding-top: 15px;
+    }
+
+    .container3 img {
+        width: 3px;
+        height: 40px;
+    }
+
+    .container3 h4 {
+        color: white;
+        padding-left: 5px;
+    }
+
+    .cont p {
+        padding-top: 15px;
+    }
+
+    .mark {
+        padding-top: 25px;
+    }
+
+    .mark p {
+        margin-top: -15px;
+        padding-left: 10px;
+    }
+
+    .mark1 {
+        display: flex;
+    }
+
+    .mark1 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .mark1 p {
+        color: orange;
+    }
+
+    .mark2 {
+        display: flex;
+        padding-top: 10px;
+    }
+
+    .mark2 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .mark3 {
+        display: flex;
+        margin-top: 23px;
+        margin-left: -388px;
+        padding-top: 10px;
+    }
+
+    .mark3 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .forthpg {
+        background-color: black;
+        width: 100vw;
+        height: 500px;
+        position: relative;
+        top: 0%;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .sideimg img {
+        position: absolute;
+        width: 900px;
+        height: auto;
+        margin-top: -250px;
+
+    }
+
+    .contside {
+        margin-left: 450px;
+        margin-top: -140px;
+    }
+
+    .contside h3 {
+        color: white;
+    }
+
+    .contside h1 {
+        color: orange;
+        padding-top: 8px;
+    }
+
+    .contside p {
+        padding-top: 8px;
+        text-align: left;
+        color: white;
+        word-wrap: break-word;
+    }
+    .num{
+        display: flex;
+        margin-left: 450px;
+        padding-top: 30px;
+    }
+    .num1 h3{
+        color:orange;
+        font-size:22px;
+    }
+    .num1 p{
+        color:white;
+    }
+    .num2{
+        color: white;
+        padding-left: 40px;
+    }
+    .num3{
+        color: white;
+        padding-left: 40px;
+    }
+    .our-services {
+            position: absolute;
+            height: 80vw;
+            width: 100%;
+            background-color: black;
+            background-image: url("./Group\ 1000003066.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50% auto;
+
+
+        }
+
+        .heading {
+            color: white;
+            text-align: center;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding: 20vh;
+            margin: 150px;
+        }
+
+        .vector {
+            width: 100%;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .content img {
+            height: 60px;
+        }
+
+        .content p {
+            color: #FFB800;
+        }
+
+        .kumbh-sans-bold {
+            font-family: "Kumbh Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+            font-variation-settings:
+                "YOPQ" 300;
+        }
+
+        .kumbh-sans-normal {
+            font-family: "Kumbh Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-variation-settings:
+                "YOPQ" 300;
+        }
+
+        section .future {
+            background-image: url("./Group\ 1000003043.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 180px;
+            width: 100%;
+            background-color: black;
+        }
+
+        .futurecontent {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            margin-top: 30px;
+
+        }
+
+</style>
+
+<body>
+    <div class="top">
+        <p><b>Subscribe to our Newsletter For New & latest Blogs and Resources</b></p>
+        <img src="1st page/Icon.png" alt="">
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="1st page/Layer_1-2.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="Home" id="home">Home</a></li>
+                <li><a href="Services">Services</a></li>
+                <li><a href="Pricing">Pricing</a></li>
+                <li><a href="About Us">About Us</a></li>
+                <li><a href="Contact Us">Contact Us</a></li>
+                <button class="button">Enroll Now</button>
+            </ul>
+        </div>
+    </nav>
+    <video autoplay muted loop>
+        <source src="1st page/2636880_Cyber_Ai_3840x2160 (1).mp4" type="video/mp4">
+        Your video does not support videos.
+    </video>
+    <div class="main-content">
+        <img src="1st page/title.png" alt="">
+        <div class="main-head">
+            <h3>Your Business With<span> </span><img src="1st page/Link.png" alt=""><span> </span><b>AI-Driven
+                    Automation</b></h3>
+        </div>
+    </div>
+    <div class="below">
+        <h4>Are you looking to strengthen your techteamwith problem solvers who<br>excel in blockchain and emerging
+            technologies?</h4>
+    </div>
+    <div class="book">
+        <h3>Book a Meeting</h3>
+        <img src="1st page/Group 1000003070.png" alt="">
+    </div>
+    <div class="secondpage">
+        <div class="img2nd">
+            <img src="2nd page/Group 1000003043 (1).png" alt="">
+        </div>
+        <div class="side-cont">
+            <h5>Unloack the Power of</h5>
+            <h2><b>FutureTech Features</b></h2>
+        </div>
+    </div>
+    <section>
+        <!-- <div class="thirdpg">
+        <img src="3rd page/Group 1000003397 (1).png" a3lt="">
+        <div class="cont">
+            <h3>WHY CHOOSE US</h3>
+          <div class="container3"></div>
+          <img src="3rd page/Rectangle 3463716.png" alt="">
+        </div>
+           </div> -->
+        <div class="thirdpg">
+            <img src="3rd page/Group 1000003397 (1).png" alt="">
+            <div class="cont">
+                <h3>WHY CHOOSE US</h3>
+                <div class="container3">
+                    <img src="3rd page/Rectangle 3463716.png" alt="">
+                    <h4>Innovative AI-Powered Solutions to<br>
+                        Drive Your Business Forward</h4>
+                </div>
+                <p>Elevate your e-commerce revenue with our AI platform. Pesonalised support, easy<br>Interface.Identity
+                    ideal audience,optimise ads,boots sales.Join us,achieve goals<br>effortlessly</p>
+                <div class="mark">
+                    <div class="mark1"><img src="3rd page/Group.png" alt="">
+                        <p>AI-powered platform for digital marketing optimization</p>
+                    </div>
+                    <div class="mark2"> <img src="3rd page/15-Checked.png" alt="">
+                        <p>AI-powered platform for digital marketing optimization</p>
+                        <div class="mark3"><img src="3rd page/15-Checked.png" alt="">
+                            <p>AI-powered platform for digital marketing optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="forthpg"> -->
+            <div class="sideimg">
+                <img src="3rd page/Group 1000003395.png" alt="">
+            </div>
+            <div class="contside">
+                <h3>OUR MISSION</h3>
+                <h1><b>Turn Ideaas into Reality</b></h1>
+                <p>It emphasizes the importance of movinng beyond just havinng ideas and instead taking the<br>necessary
+                    steps to bring them to fruition. Whatever it's starting a business , pursuing a passion <br>project
+                    or setting personal goals , the ideas is turn abstractnthaughts into concrete results. It''s<br>a
+                    call to action t take control of our lives and turn our ideas into a reality that we can be
+                    proud<br>of and enjoy</p>
+            </div>
+            <div class="num">
+                <div class="num1">
+                    <h3>80%</h3>
+                    <p>Seo</p>
+                </div>
+                <div class="num2">
+                    <h3>90%</h3>
+                    <p>Design</p>
+                </div>
+                <div class="num3">
+                    <h3>87%</h3>
+                    <p>Development</p>
+                </div>
+            </div>
+            <div class="our-services">
+                <div class="heading">
+                    <div class="">
+                        <h1 class="kumbh-sans-bold" style="color: #FFB800;">OUR SERVICES</h1>
+                    </div>
+                    <div class="transform">
+                        <p class="kumbh-sans-normal">transforming ideas into tangible success</p>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (1).png" alt="">
+                            <p class="kumbh-sans-normal">Ai Marketing <br>
+                                & Automation (SEO)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (2).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (3).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (5).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (6).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (7).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+        
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (8).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                    <div class="vector">
+                        <div class="content">
+                            <img src="4TH PAGE/Group (9).png" alt="">
+                            <p class="kumbh-sans-normal">Social Media <br>
+                                Management (SMM)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+     
+        </div>
+    </section>
+
+
+</body>
+
+</html>
